@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from './test.module.css';
+import App from './App.jsx';
 
-ReactDOM.render(<h1 className={styles.title}>FEC GANG</h1>, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
+
