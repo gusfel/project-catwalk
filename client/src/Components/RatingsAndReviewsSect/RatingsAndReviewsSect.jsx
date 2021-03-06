@@ -147,20 +147,29 @@ class RatingsAndReviewsSect extends React.Component {
     return(
       <div className={styles.reviewsContainer}>
         <div className={styles.reviewsGrid}>
-          <div className={styles.gridCol1}>
-            <h1 className={styles.sectionTitle}>RATINGS AND REVIEWS</h1>
-            <AvgRatings averageRating={this.state.averageRating}/>
-            <AvgRecs recsPercentage={this.state.recsPercentage} />
-            <RatingBreakdown totalRatings={this.state.totalRatings} ratings={this.state.ratings} />
-            <CharacteristicsSummary characteristics={this.state.characteristics} />
-          </div>
-          <div className={styles.gridCol2}>
+            <h1 className={`${styles.componentTitle} ${styles.sectionTitle}`}>RATINGS AND REVIEWS</h1>
+            <div className={styles.averageNumRow}>
+              <AvgRatings averageRating={this.state.averageRating}/>
+            <div className={styles.recRow}>
+              <AvgRecs recsPercentage={this.state.recsPercentage} />
+              </div>
+            </div>
+            <div className={styles.starGraphs}>
+              <RatingBreakdown totalRatings={this.state.totalRatings} ratings={this.state.ratings} />
+            </div>
+            <div className={styles.charGraphs}>
+              <CharacteristicsSummary characteristics={this.state.characteristics} />
+            </div>
+          {/* <div className={styles.count}>
+
+          </div> */}
+          <div className={styles.listCol}>
             <ReviewCount reviewCount={this.state.reviewCount}/>
             <List reviewList={this.state.reviewList}/>
-            <span className={styles.listButtons}>
+          </div>
+          <div className={`${styles.listButtons} ${styles.buttonsRow}`}>
               <MoreReviewsButton />
               <AddReviewButton handleAddReview={this.handleAddReview}/>
-            </span>
           </div>
         </div>
         {!this.state.addReview ? null : <WriteYourReview characteristics={this.state.characteristics} sendNewReview={this.sendNewReview} addReview={this.state.addReview} />}

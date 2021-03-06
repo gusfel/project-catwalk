@@ -29,11 +29,50 @@
 
 .reviewsGrid {
   display: grid;
-  grid-template-columns: 33% 66%;
+  grid-template-areas:  "title ..."
+                        "avgNumbers reviewList"
+                        "avgStarsGraph reviewList"
+                        "characteristicsGraph reviewList"
+                        "... reviewList"
+                        "... buttons";
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto auto auto auto auto auto;
   column-gap: 2em;
 }
 
-.gridCol1 {
+.averageNumRow {
+  grid-area: avgNumbers;
+}
+
+.recRow {
+  grid-area: recRow;
+}
+
+.starGraphs {
+  grid-area: avgStarsGraph;
+}
+
+.charGraphs {
+  grid-area: characteristicsGraph;
+}
+
+.listCol {
+  grid-area: reviewList;
+}
+
+.buttonsRow {
+  grid-area: buttons;
+}
+
+.count {
+  grid-area: count;
+}
+
+.componentTitle {
+  grid-area: title;
+}
+
+/* .gridCol1 {
   color: black;
   text-align: left;
 }
@@ -41,7 +80,7 @@
 .gridCol2 {
   color: black;
   text-align: left;
-}
+} */
 
 .reviewCounter {
   margin-top: 0px;
@@ -50,10 +89,6 @@
 
 .sortText {
   font-weight: bold;
-}
-
-.arrow {
-  font-weight: normal;
 }
 
 .sortText.pointer {
