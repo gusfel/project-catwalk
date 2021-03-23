@@ -33,7 +33,7 @@ axios(options).then(console.log('worked'))
 helpA: (req,res)=>{
   console.log(req)
   let options = {
-    url: 'http://localhost:2000/qa/answers/'+ req.body.body+'/helpful' ,
+    url: `http://localhost:2000/qa/answers/${req.body.body}/helpful` ,
     method: 'put',
     // headers: {
     //   'User-Agent': 'request',
@@ -83,7 +83,6 @@ ReoportQ: (req,res)=>{
 
 },
 ReoportA:  (req,res)=>{
-
   let options = {
     url: 'http://localhost:2000/qa/answers/'+ req.body.answers_id+'/report' ,
     method: 'put',

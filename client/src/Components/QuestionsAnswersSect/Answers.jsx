@@ -17,6 +17,7 @@ class Answers extends React.Component{
   }
   reported(){
     if(!this.state.reported){
+      console.log('test')
       axios.put('/reportA', {answers_id:this.props.answers.id }).then('worked')
       this.setState({
         reported: true
@@ -82,7 +83,7 @@ formatDate(isoDate){
       <p className={styles.userbyA}>by {this.props.answers.answerer_name} on {this.formatDate(this.props.answers.date.toString())} </p>
       <p className={styles.help} >| Helpful? </p>
       <button className={styles.buttonQ} onClick={this.Yes}> Yes </button> <p className={styles.helpNum}>({this.state.helpfulness})</p>
-      <button className={styles.buttonQ}>Report</button>
+      <button className={styles.buttonQ} onClick={this.reported}>Report</button>
       </div>
       <br></br>
       <br></br>
