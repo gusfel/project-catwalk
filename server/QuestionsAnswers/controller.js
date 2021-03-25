@@ -8,7 +8,7 @@ module.exports = {
 
 getData: (req,res)=>{
   let options = {
-    url: 'http://localhost:2000/qa/questions?product_id=' + req.query.id+'&count=69',
+    url: 'http://ec2-3-142-74-164.us-east-2.compute.amazonaws.com:2000/qa/questions?product_id=' + req.query.id+'&count=69',
     method: 'GET',
     headers: {
       'User-Agent': 'request',
@@ -20,7 +20,7 @@ getData: (req,res)=>{
 
 helpQ: (req,res)=>{
   let options = {
-    url: 'http://localhost:2000/qa/questions/'+ req.body.body+'/helpful' ,
+    url: 'http://ec2-3-142-74-164.us-east-2.compute.amazonaws.com:2000/qa/questions/'+ req.body.body+'/helpful' ,
     method: 'put',
     // headers: {
     //   'User-Agent': 'request',
@@ -33,7 +33,7 @@ axios(options).then(console.log('worked'))
 helpA: (req,res)=>{
   console.log(req)
   let options = {
-    url: `http://localhost:2000/qa/answers/${req.body.body}/helpful` ,
+    url: `http://ec2-3-142-74-164.us-east-2.compute.amazonaws.com:2000/qa/answers/${req.body.body}/helpful` ,
     method: 'put',
     // headers: {
     //   'User-Agent': 'request',
@@ -47,7 +47,7 @@ axios(options).then(console.log('worked'))
 addAnswer:(req,res)=>{
   console.log(req.body)
   let options = {
-    url: 'http://localhost:2000/qa/questions/'+ req.body.question_id+'/answers' ,
+    url: 'http://ec2-3-142-74-164.us-east-2.compute.amazonaws.com:2000/qa/questions/'+ req.body.question_id+'/answers' ,
     method: 'post',
     data: req.body.obj,
     headers: {
@@ -61,7 +61,7 @@ addAnswer:(req,res)=>{
 addQuestion: (req,res)=>{
   console.log(req.body)
   let options = {
-    url: 'http://localhost:2000/qa/questions' ,
+    url: 'http://ec2-3-142-74-164.us-east-2.compute.amazonaws.com:2000/qa/questions' ,
     method: 'post',
     data: req.body,
     headers: {
@@ -73,7 +73,7 @@ addQuestion: (req,res)=>{
 ReoportQ: (req,res)=>{
 
   let options = {
-    url: 'http://localhost:2000/qa/questions/'+ req.body.question_id+'/report' ,
+    url: 'http://ec2-3-142-74-164.us-east-2.compute.amazonaws.com:2000/qa/questions/'+ req.body.question_id+'/report' ,
     method: 'put',
     headers: {
       'Authorization': key
@@ -84,7 +84,7 @@ ReoportQ: (req,res)=>{
 },
 ReoportA:  (req,res)=>{
   let options = {
-    url: 'http://localhost:2000/qa/answers/'+ req.body.answers_id+'/report' ,
+    url: 'http://ec2-3-142-74-164.us-east-2.compute.amazonaws.com:2000/qa/answers/'+ req.body.answers_id+'/report' ,
     method: 'put',
     headers: {
       'Authorization': key

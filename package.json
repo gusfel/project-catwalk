@@ -8,7 +8,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
     "start": "nodemon server/server.js",
-    "webpack": "npx webpack --watch",
+    "webpack": "webpack --watch",
     "webpack-prod": "npx webpack -production"
   },
   "repository": {
